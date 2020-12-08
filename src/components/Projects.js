@@ -8,9 +8,11 @@ const Projects = ({projects,title,showLink}) => {
     <div className="section-center projects-center">
       {projects.map((project, index) => {
         return <Project key={project.id} index={index} {...project} />
+        //projectの中身はオブジェクトなので、それを展開した状態でProjectにわたす
       })}
     </div>
     {
+      //showLinkがtrueの場合のみリンクを表示させますよ
       showLink && <Link to="/projects" className="btn center-btn">
         showmore
       </Link>

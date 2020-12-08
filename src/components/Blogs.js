@@ -13,6 +13,7 @@ const Blogs = ({blogs,title,showLink}) => {
       })}
         
       </div>
+      {/* //showLinkが渡された場合、つまりindexページのとき */}
       
       {showLink && <Link to="/blog" className="btn center-btn">blog</Link>}
       

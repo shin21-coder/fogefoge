@@ -8,6 +8,9 @@ import {
 } from "react-icons/fa"
 
 const data = [
+  //constansとしてリンク先を１つのファイルにまとめる
+  //これはリンク先を配列として準備して
+  //その中にオブジェクトをいれる
   {
     id: 1,
     icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
@@ -34,6 +37,7 @@ const data = [
     url: "https://www.twitter.com",
   },
 ]
+//んで、dataをmapで展開してid,url,iconをそれぞれhtmlとして吐き出す
 const links = data.map(link => {
   return (
     <li key={link.id}>
@@ -43,6 +47,8 @@ const links = data.map(link => {
     </li>
   )
 })
+
+//使用先でstyleClass(この名前はなんでもいいけど、とりあえずスタイルクラスって名前をつけておく)が定義されていればそのスタイルクラスをclassNameとして使用する（。。。ややこしい。。。）未定義だったら空白にしておく
 
 export default ({ styleClass }) => {
   return (

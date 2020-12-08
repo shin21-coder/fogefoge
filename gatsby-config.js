@@ -12,7 +12,7 @@ module.exports = {
     author: "@webdev",
     twitterUsername: "@john_smilga",
     image: "/twitter-img.png",
-    siteUrl: "https://gatsby-tutorial-20201.netlify.app/",
+    siteUrl: "https://gatsby-tutorial-20201.netlify.app",
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -39,6 +39,7 @@ module.exports = {
       },
     },
     {
+      //googleフォントも表示速度を爆速化するにはプラグインで入れたほうがいい！！！！！！！！
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [

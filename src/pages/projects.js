@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
-
+//Allprojectsなので全部展開させる
 const ProjectsPage = ({
   data:{allStrapiProjects:{nodes:projects}}
 }) => {

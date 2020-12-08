@@ -19,8 +19,8 @@ file(relativePath:{eq:"hero-img.png"}){
 
 const Hero = () => {
   const { file: { childImageSharp: { fluid } } } = useStaticQuery(query);
-
-
+  
+  
   return <header className="hero">
     <div className="section-center hero-center">
       <article className="hero-info">

@@ -11,7 +11,8 @@ import SEO from "../components/SEO"
 export default ({ data }) => {
   const { allStrapiProjects: { nodes: projects },
           allStrapiBlogs: { nodes: blogs }
-}=data
+  } = data
+  //別名つけてる:
   return <>
     <Layout>
       <SEO title="Home" description="this is home"/>
@@ -21,10 +22,14 @@ export default ({ data }) => {
       <Jobs />
       <Projects projects={projects} title="featured projects" showLink />
       <Blogs blogs={blogs} title="blog" showLink />
+      {/* //showLinkは定義されてないけど、リンクを付けるかつけないかを決めるやつ */}
+      {/* //trueかfalseを決めるやつですよ */}
     </Layout>
   </>
 }
 
+
+//ここでフィルターを掛けて表示件数をコントロールしている
 export const query = graphql`
   {
     allStrapiProjects(filter: {featured: {eq: true}}) {
@@ -50,8 +55,8 @@ export const query = graphql`
     }
   
   
-  
-  allStrapiBlogs {
+  //こっち。。。はフィルターかけましょうね。はい
+  allStrapiBlogs(sort:{fields:date,order:DESC},limit:3) {
     nodes {
       slug
       content

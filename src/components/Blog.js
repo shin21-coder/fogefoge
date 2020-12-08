@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import Title from "./Title"
 import Blogs from "./Blogs"
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
+  //...Blogsから渡された...blogをオブジェクトとして取り入れている
   
   return (<Link to={`/blogs/${slug}`} className="blog" key={id}>
 
